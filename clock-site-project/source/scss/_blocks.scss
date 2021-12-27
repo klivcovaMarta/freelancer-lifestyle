@@ -1,0 +1,123 @@
+//<title>==========================================================
+.title {
+	& > *:not(:last-child) {
+	margin: 0px 0px 30px 0px;
+	}
+	
+	// .title__item
+	&__item {
+		font-family: ceremonious;
+		font-size: 40px;
+		line-height: 25px / 40px * 100%;
+		font-weight: 400;
+		color: #bb9c66;
+	}
+
+	// .title__main
+	&__main {
+		font-family: PFDin;
+		font-size: 35px;
+		line-height: 35px;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		color: #000;
+		&_w {
+		color: #fff;
+		}
+		&_regular {
+		font-weight: 400;			
+		}
+	}
+}
+//<btn>==========================================================
+.btn {  
+	display: inline-flex;
+	position: relative;
+	&:before,
+	&:after {
+		position: absolute;
+		left: 0;
+		height: 3px;
+		width: 100%;
+		content: '';
+	}
+	&:before {
+		background-color: #cdb588;
+		top: 0;
+	}
+	&:after {
+		background-color: #8d642d;
+		bottom: 0;
+	}			
+
+	// .btn__body
+	&__body {
+		display: inline-flex;		
+		position: relative;
+		&:before,
+		&:after {
+			position: absolute;
+			top: 0;
+			width: 3px;
+			height: 100%;
+			content: '';
+		}
+		&:before {
+			background-image: linear-gradient(to top, #8d642d 0%, #cdb588  100%);
+			left: 0;
+		}
+		&:after {
+			background-image: linear-gradient(to top, #8d642d 0%, #cdb588  100%);
+			right: 0;
+		}
+		span {
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			
+			padding: 0 50px;
+			height: 50px;
+
+			font-size: 15px;
+			line-height: 21px;
+			font-weight: 400;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+			color: #ffffff;
+
+			position: relative;
+			&:after {
+				position: absolute;						
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 50%;  //  у фрилансера height: 50%;
+				transition: all 0.5s ease 0s;	
+				background-image: linear-gradient(to top, #8d642d 0%, #cdb588  100%);
+				opacity: 0.06;	
+				content: '';				
+			}
+			@media (min-width: 992px) {
+				&:hover {	
+					&:after {					
+						height: 100%;
+						opacity: 0.5;
+					}
+				}
+			}
+		}
+	}	
+}
+//<_ibg>==========================================================
+._ibg {
+	position: relative;		
+}
+._ibg img {
+	position: absolute;		
+	left: 0;
+	top: 0;	
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
