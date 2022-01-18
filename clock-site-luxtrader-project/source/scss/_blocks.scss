@@ -221,9 +221,10 @@
 }
 //<LOT>==========================================================
 .lot {		
+	text-align: center;
 	display: flex;
 	flex-direction: column;
-	height: 100%;		
+	height: 100%;	
 	// .lot__header
 	&__header {
 		text-align: center;
@@ -246,15 +247,23 @@
 		z-index: 2;
 		font-family: PFDin;
 		font-size: 21px;
-		line-height: 25px;
+		// line-height: 25px/21px * 1em;
 		font-weight: 500;
 		text-transform: uppercase;
 		color: #000000;
-		margin: 0px 0px 10px 0px;		
+		margin: 0px 0px 20px/21px * 1em 0px;		
+		@media (max-width: 975px) {
+			font-size: 18px;
+		}
+		@media (min-width: 992px) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		
 	}
 	// .lot__info
 	&__info {
-					
 	} 
 	// .lot__btn
 	&__btn {
@@ -305,31 +314,175 @@
 	margin: 0px 0px 35px 0px;
 	// .info-lot__statistic
 	&__statistic {
+		flex: 0 0 50px;
+		display: flex;
+		flex-direction: column;
+		// justify-content: center;
+		align-items: center;
 	}
 	// .info-lot__icon
 	&__icon {
-		width: 25px;
-		height: 25px;
+		margin: 0 0 10px 0;
+		width: 25px * 0.72;
+		height: 25px * 0.72;
 		display: flex;
 		justify-content: center;
-		align-items: center;	
+		align-items: center;
+		position: relative;
+		img {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			z-index: 2;
+		}
+		&:after {
+			content: '';
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background-color: #000;
+			transform: rotate(45deg);
+		}	
 	}
 	// .info-lot__value
 	&__value {
-
+		font-size: 14px;
+		border-bottom: 1px solid #bb9c66;
+		width: 50px;
+		padding: 0px 0px 5px 0px;		
 	}
 	// .info-lot__current-bet
 	&__current-bet {
+		flex: 1 1 auto;
+		@media (max-width: 975px) {
+			flex: 0 0 auto;
+		}		
 	}
 }
 .current-bet-info-lot {
+	padding: 0 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	@media (max-width: 975px) {
+		padding: 0 10px;
+	}
+	position: relative;
+	div {
+		position: relative;
+		z-index: 2;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 72px;
+		height: 72px;
+		border: 1px solid #bb9c66;;
+		transform: translate(-50%, -50%) rotate(45deg);
+	}
+	
 	// .current-bet-info-lot__label
 	&__label {
+		margin: 0px 0px 7px 0px;		
 	}
 	// .current-bet-info-lot__value
 	&__value {
+		font-family: 'BravoRGRegular';
+		font-size: 50px;		
+		font-weight: 400;
+		color: #1c242a;
+		white-space: nowrap;	
+		@media (max-width: 975px) {
+			font-size: 35px;
+		}		
 	}
 	// .current-bet-info-lot__currency
 	&__currency {
+	}
+}
+//<CATEGORY>==========================================================
+.item {	
+	position: relative;	
+	display: flex;
+	flex-direction: column;
+	padding: 30px 10px 40px 10px;
+	align-items: center;
+	height: 250px;
+	width: 250px;
+	border-radius: 50%;		
+	@media (min-width: 992px) {
+		&:hover {
+			.item__bg:after {
+				background-color: rgba(14, 3, 75, 0.5);	
+			}			
+		}
+	}
+	// .item__link
+	&__link {
+		position: absolute;
+		z-index: 3;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;	
+		border-radius: 50%;
+	}
+	&__body {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 100%;
+	}
+	// .item__icon
+	&__icon {	
+		margin: 0px 0px 30px 0px;			
+	}
+	// .item__title
+	&__title {
+		flex: 1 1 auto;
+		text-align: center;
+		position: relative;
+		z-index: 2;
+		font-family: PFDin;
+		font-size: 21px;
+		line-height: 25px/21px * 1em;
+		letter-spacing: 0.1em;
+		font-weight: 500;
+		text-transform: uppercase;
+		color: #fff;
+		padding: 0 30px;
+	}
+	// .item__decor
+	&__decor {		
+	}	
+	// .item__bg
+	&__bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		&:after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: rgba(0, 0, 0, 0.7);	
+			border-radius: 50%;		
+			transition: background-color 0.8s ease 0s;		
+		}
 	}
 }
