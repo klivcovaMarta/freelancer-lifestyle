@@ -8,7 +8,7 @@
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Заголовок страницы в браузере -->
-		<title>Velocity</title>
+		<title>John</title>
 		<!-- Подключаем Swiper (плагин СЛАЙДЕР) !подключаем скаченные файлы - поскольку cdn вводится извне, он выполняется последним, а 
 		написанный внутри JS код будет выполняться первым, поэтому объект Swiper не будет найден - проблема заключается в жизненном цикле реакции и непонятном порядке
 		выполнения (вопрос с cdn тоже может быть решен через загрузку пакета через терминал)	 -->
@@ -16,19 +16,37 @@
 		<!-- <link rel="stylesheet" href="css/swiper-bundle.min.css"> -->
 		
 	   	<!-- Подключаем CSS -->
+		<link rel="stylesheet" href="css/iconsfont.css">		
 		<link rel="stylesheet" href="css/style.css">		
 	</head>
 	<!-- Отображаемое тело страницы -->
 	<body>
 		<div class="wrapper">
-
+			<header class="header">
+				<div class="header__content">   <!--! change sneppet con --> 
+					<div class="header__menu menu">  <!--! add sneppet menu --> 
+						<div class="menu__icon icon-menu">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li><a href="" class="menu__link">Works</a></li>
+								<li><a href="" class="menu__link">Blog</a></li>
+								<li><a href="" class="menu__link">Contact</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>				
+			</header>			
 		</div>
 		<!-- Подключаем файлы js  и библиотеку JQuery  при необходимости-->
-		<!-- <script src="js/jquery-3.6.0.min.js"></script> -->
+		<!-- <script src="js/libs/jquery-3.6.0.min.js"></script> -->
 		<!-- Подключаем Swiper (плагин СЛАЙДЕР) -->
 		<!-- <script src="js/libs/swiper-bundle.min.js"></script> -->
 		<script src="js/script.js"></script>
-		<script src="js/functions.js"></script>	
+		<!-- <script src="js/functions.js"></script>	 -->
 		
 	</body>
 </html>

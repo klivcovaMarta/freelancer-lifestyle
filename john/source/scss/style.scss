@@ -2,93 +2,176 @@
 @import "_fonts";
 @import "_ui";
 // @import '_swiper';
-
 //<ПЕРЕМЕННЫЕ>===================================================================================================================
-// $minwidth: 320px;
-// $mw: 970;
-// $md1: $mw + 12;
-// $md2: 991.98;
-// $md3: 767.98;
-// $md4: 479.98;
-
-
+$minWidth: 320px;
+$maxWidth: 1152px;  // width of all maket
+$maxWidthContainer: 856;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
 //<ШАБЛОНЫ>===================================================================================================================
 // %style-of-subtitle {}
 //<ШРИФТ ПО УМОЛЧАНИЮ>=================================================================================================
 body {
-  // font-family: "PT Sans";
-//   &._lock {
-//     overflow: hidden; // запрещаем скрол при открытом меню-бургере
-//   }
+  font-family: $fontFamily;
+  font-size: 14px;
+  &._lock {
+    overflow: hidden; // запрещаем скрол при открытом меню-бургере
+  }
 }
 //<ОБОЛОЧКА>====================================================================================================================
 .wrapper {
-  // width: 100%;
-  // min-height: 100%;
-  // overflow: hidden;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
   // display: flex; // чтобы прижать футер к низу
   // flex-direction: column;
 }
 //<Ссужающий контейнер _container>=============================================================================================
 ._container {
-  // max-width: $mw + px;
-  // margin: 0 auto;
-  // padding: 0 10px;
-
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  padding: 0 10px;
   //<ОСНОВНАЯ СЕТКА>===========
-  // данные шпаргалки по адаптиву не нужны, т.к.
-  //нужно четко видеть сужение ширины окна для лучшего адаптива
   // @media (max-width: $md1+px) {
   // 	max-width: 970px;
   // }
-  // @media (max-width: $md2+px) {
-  // 	max-width: 750px;
-  // }
-  // @media (max-width: $md3+px) {
-  // 	max-width: none;
-  // 	padding: 0 10px;
-  // }
+  @media (max-width: $md1+px) {
+  	max-width: 750px;
+  }
+  @media (max-width: $md2+px) {
+  	max-width: none;
+  	padding: 0 10px;
+  }
 }
 //<HEADER>====================================================================================================================
+.header {
+  // .header__content
+  &__content {
+    max-width: 1052px;
+    padding: 0 10px;
+    margin: 0 auto;
+  }
+  // .header__menu
+  &__menu {
+    height: 82px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @media (max-width: 767px) {
+      height: 50px;
+    }
+    
+  }
+}
+//<MENU>====================================================================================================================
+.menu {
+  // .menu__icon
+  &__icon {
 
-//<icon for burger>=======БУРГЕР-блок=======================БУРГЕР-блок=======================БУРГЕР-блок================
-// .icon-menu {
-//   @media (max-width: 767px) {
-//     display: block;
-//     position: relative;
-//     width: 30px;
-//     height: 18px;
-//     cursor: pointer;
-//     z-index: 5;
-//     span {
-//       transition: all 0.3s ease 0s;
-//       top: calc(50% - 1px);
-//       left: 0px;
-//       position: absolute;
-//       width: 100%;
-//       height: 2px;
-//       background-color: #b29059;
-//       &:first-child {
-//         top: 0px;
-//       }
-//       &:last-child {
-//         top: auto;
-//         bottom: 0px;
-//       }
-//     }
-//     &._active {
-//       span {
-//         transform: scale(0, 0);
-//         &:first-child {
-//           transform: rotate(-45deg);
-//           top: calc(50% - 1px);
-//         }
-//         &:last-child {
-//           transform: rotate(45deg);
-//           bottom: calc(50% - 1px);
-//         }
-//       }
-//     }
-//   }
-// }
-//<>====================================================================================================================
+  }
+
+  // .menu__body
+  &__body {
+    @media (max-width: 767px) {
+      transform: translate(0%, -100%);
+      transition: transform 0.8s ease 0s;      
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: auto;
+      padding: 80px 10px 30px;
+      background-color: rgba(255,255,255, 0.8);
+    }
+    &._active {
+      transform: translate(0%,0%);
+    }
+  }
+
+  // .menu__list
+  &__list {    
+    li {
+      margin: 0px 0px 0px 33px;    
+    }  
+    @media (min-width: 767px) {
+      display: flex;
+    }    
+    @media (max-width: 767px) {
+      display: block;
+      text-align: center;
+      li {
+        &:not(:last-child) {
+          margin: 0px 0px 40px 0px; 
+        }  
+        &:last-child {
+          margin: 0px 0px 0px 0px; 
+        }
+      }
+    }  
+  }
+
+  // .menu__link
+  &__link {
+    font-weight: 500;
+    font-size: 20px;
+    @media (max-width: 767px) {
+     font-size: 40px;
+    }
+    color: #000;
+    transition: color 0.3s ease 0s;    
+    @media (min-width: 767px) {
+      &:hover {
+        color: #FF6464;
+      }
+    }
+    
+  }
+}
+//<icon-menu for burger>=======БУРГЕР-блок=======================БУРГЕР-блок=======================БУРГЕР-блок================
+.icon-menu {
+  display: none;
+  @media (max-width: 767px) {
+    display: block;
+    position: relative;
+    // position: absolute;
+    // top: 18px;
+    // right: 10px;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 5;
+    span {
+      transition: all 0.3s ease 0s;
+      top: calc(50% - 1px);
+      left: 0px;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      &:first-child {
+        top: 0px;
+      }
+      &:last-child {
+        top: auto;
+        bottom: 0px;
+      }
+    }
+    &._active {
+      span {
+        transform: scale(0, 0);
+        &:first-child {
+          transform: rotate(-45deg);
+          top: calc(50% - 1px);
+        }
+        &:last-child {
+          transform: rotate(45deg);
+          bottom: calc(50% - 1px);
+        }
+      }
+    }
+  }
+}
