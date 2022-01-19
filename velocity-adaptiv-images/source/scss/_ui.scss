@@ -1,99 +1,108 @@
+//<btn>==========================================================
+// .btn {  
+// 	display: inline-flex;
+// 	position: relative;	
+// 	&:before,
+// 	&:after {
+// 		position: absolute;
+// 		left: 0;
+// 		height: 3px;
+// 		width: 100%;		
+// 		content: '';
+// 	}
+// 	&:before {
+// 		background-color: #cdb588;
+// 		top: 0;
+// 	}
+// 	&:after {
+// 		background-color: #8d642d;
+// 		bottom: 0;
+// 	}			
 
-/*!===Оболочка для того, чтобы не было горизонтального скрола=====================================================================*/
-.wrapper {
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
-	overflow: hidden; 	
-}
-.page {
-	flex: 1 1 auto;  	 /*контент прижимает футер к низу страницы*/
-}
-/*=============ТЕХНИЧЕСКИЕ КЛАССЫ===========================================================*/
-._container {
-	/* max-width: 1046px; */
-	margin: 0 auto;
-	padding: 0 15px;     /* отступ безопастности, чтобы не прилипал контент к краям*/
-	box-sizing: content-box;   /* чтобы padding  не входит в размер огр. контейнера*/
-}
-._ibg {
-	position: relative;
-	padding: 0 0 58% 0;
-}
-._ibg img {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-/*IBG для IE*/
-/*
-.ibg{
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	position: relative;
-}
-.ibg img{
-	width: 0;
-	height: 0;
-	position: absolute;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	visibility: hidden;
-}
+// 	// .btn__body
+// 	&__body {
+// 		display: inline-flex;		
+// 		position: relative;
+// 		&:before,
+// 		&:after {
+// 			position: absolute;
+// 			top: 0;
+// 			width: 3px;
+// 			height: 100%;
+// 			content: '';
+// 		}
+// 		&:before {
+// 			background-image: linear-gradient(to top, #8d642d 0%, #cdb588  100%);
+// 			left: 0;
+// 		}
+// 		&:after {
+// 			background-image: linear-gradient(to top, #8d642d 0%, #cdb588  100%);
+// 			right: 0;
+// 		}
+// 		span {
+// 			display: flex;
+// 			justify-content: center;
+// 			align-items: center;			
+// 			padding: 0 50px;
+// 			min-height: 50px;
+// 			font-size: 15px;
+// 			line-height: 21px;
+// 			font-weight: 400;
+// 			text-transform: uppercase;
+// 			letter-spacing: 0.1em;
+// 			color: #ffffff;
 
-=========== + Чистый JS======================
-
-function ibg(){
-let ibg=document.querySelectorAll(".ibg");
-for (var i = 0; i < ibg.length; i++) {
-if(ibg[i].querySelector('img')){
-ibg[i].style.backgroundImage = 'url('+ibg[i].querySelector('img').getAttribute('src')+')';
-}}}
-ibg();
-*/
-
-._button {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-}
-/*--------------------------------------------------------*/
-/*! Переполнение текста*/
-.class {
-	/* width: ;  */   	 /* ОБЯЗАТЕЛЬНО, иначе не обрежет*/
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-}
-
-/*! Оболочка для любого сайта (позвляет убрать горизонтальный скрол и 
-работать с отицательными отступами)*/
-.wrapper {
-	min-height: 100%;
-	overflow: hidden;
-}	
-
-/* !Рекомендует так делать, чтобы если попадет большая картинка - 		
-она адаптировалась + добавляем в див min-width: ; */
-/* __items {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-}
-__item {
-	flex: 0 1 16.666%;
-	padding: 8px 15px;  // отняли от верхнего отступа у блока 
-						   и добавили отступ безопастности картинкам (чтобы не прилипали)
-	min-width: 140px; 
-	text-align: center;
-}
-__item img{
-	max-width: 100%; 
-} */
+// 			position: relative;
+// 			&:after {
+// 				position: absolute;						
+// 				top: 0;
+// 				left: 0;
+// 				width: 100%;
+// 				height: 50%;  
+// 				transition: all 0.5s ease 0s;	
+// 				background-image: linear-gradient(to top, #8d642d 0%, #cdb588  100%);
+// 				opacity: 0.06;	
+// 				content: '';				
+// 			}
+// 			@media (min-width: 992px) {
+// 				&:hover {	
+// 					&:after {					
+// 						height: 100%;
+// 						opacity: 0.5;
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}	
+// 	&_big {
+// 		position: relative;	
+// 		.btn__body {
+// 			position: relative;
+// 			margin: 0 auto;
+// 		}
+// 		.btn__body span {
+// 			font-family: PFDin;
+// 			font-size: 21px;
+// 			letter-spacing: 0;
+// 			line-height: 25px;
+// 			font-weight: 500;
+// 			text-transform: uppercase;
+// 			color: #000000;
+// 			padding: 0 27px;			
+// 		}
+// 	}
+// }
+//<_ibg>==========================================================
+// ._ibg {
+// 	position: relative;		
+// 	// padding: 0 0 57% 0;
+// }
+// ._ibg img {
+// 	position: absolute;		
+// 	left: 0;
+// 	top: 0;	
+// 	height: 100%;
+// 	width: 100%;
+// 	object-fit: cover;
+// }
+//<>==========================================================
