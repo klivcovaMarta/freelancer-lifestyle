@@ -1,3 +1,53 @@
+//<page>==========================================================
+.page {
+	padding: 79px 0px 0px 0px;
+	@media (max-width: 767px) {
+		padding: 33px 0px 0px 0px;
+	}
+}
+//<title>==========================================================
+.title {
+	font-weight: bold;
+	font-size: 44px;
+	line-height: 60 / 44 * 100%;   //! add to snippet
+	@media (max-width: 767px) {
+		font-size: 32px;
+		line-height: 40 / 32 * 100%;  
+	  }
+}
+//<text>==========================================================
+.title-posts {
+	font-size: 22px;
+	@media (max-width: 767px) {
+		font-size: 18px;
+		text-align: center;
+	}
+}
+//<text>==========================================================
+.text {
+	line-height: 23 / 16 * 100%;
+}
+//<btn>==========================================================
+.btn {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;	
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 29 / 20 * 100%;
+	color: #FFFFFF;
+	background: #FF6464;
+	border-radius: 2px;
+	height: 47px;
+	padding: 0 20px;
+	transition: all 0.5s ease 0s;
+	@media (min-width: 992px) {
+		&:hover {
+		background: #fc3333;
+		}
+	}	
+}
 //<btn>==========================================================
 // .btn {  
 // 	display: inline-flex;
@@ -93,16 +143,15 @@
 // 	}
 // }
 //<_ibg>==========================================================
-// ._ibg {
-// 	position: relative;		
-// 	// padding: 0 0 57% 0;
-// }
-// ._ibg img {
-// 	position: absolute;		
-// 	left: 0;
-// 	top: 0;	
-// 	height: 100%;
-// 	width: 100%;
-// 	object-fit: cover;
-// }
+._ibg {
+	position: relative;	
+}
+._ibg img {
+	position: absolute;		
+	left: 0;
+	top: 0;	
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
 //<>==========================================================
