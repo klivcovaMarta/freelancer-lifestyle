@@ -1,0 +1,69 @@
+.works__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.works__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 246px;
+          flex: 0 0 246px;
+  min-height: 180px;
+  border-radius: 6px;
+}
+
+.works__body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 0px 0px 0px 18px;
+}
+
+.works__title {
+  font-family: Heebo;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 146.66667%;
+  color: #21243D;
+}
+
+.works__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.works__year {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: #142850;
+  border-radius: 16px;
+  color: red;
+  font-family: Heebo;
+  font-weight: 900;
+  font-size: 18px;
+  padding: 0 10px;
+  height: 25px;
+}
+
+.works__category {
+  color: red;
+}
+
+.works__text {
+  color: red;
+}

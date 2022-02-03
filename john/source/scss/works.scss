@@ -1,0 +1,65 @@
+.works {
+
+	// .works__item  
+	&__item {
+		display: flex;
+		align-items: flex-start;
+	}
+  
+	// .works__image  
+	&__image {
+		flex: 0 0 246px;
+		min-height: 180px;
+		border-radius: 6px;
+	}
+  
+	// .works__body  
+	&__body {
+		flex: 1 1 auto;
+		padding: 0px 0px 0px 18px;
+	}
+  
+	// .works__title  
+	&__title {
+		font-family: Heebo;
+		font-weight: bold;
+		font-size: 30px;
+		line-height: 44px / 30px * 100%;
+		color: #21243D;
+	}
+  
+	// .works__info  
+	&__info {
+		display: flex;
+		align-items: center;
+	}
+  
+	// .works__year  
+	&__year {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		background-color: #142850;
+		border-radius: 16px;
+		// color: #fff;
+		color: red;
+
+		font-family: Heebo;
+		font-weight: 900;
+		font-size: 18px;
+		padding: 0 10px;		
+		height: 25px;		
+	}
+  
+	// .works__category  
+	&__category {
+		color: red;
+	}
+  
+	// .works__text  
+	&__text {
+		color: red;
+
+	}
+  }
